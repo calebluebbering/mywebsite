@@ -1,0 +1,375 @@
+/* MAIN */
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    height: 100%;
+    overflow: auto;
+    background-image: url("/images/background-blue.jpg");     /* BACKGROUND IMAGE IS FREE TO USE: https://www.veeforu.com/comic-backgrounds/cyan-and-blue-comic-background/*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 7% auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define columns */
+    gap: 40px;
+    justify-items: center;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: 25%;
+    opacity: 0;
+    transform: scale(0.5);
+    transform-origin: bottom right;
+    transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
+}
+.card:hover .overlay {
+    opacity: 1;
+    transform: scale(1.0);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1105px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 300px;
+    }
+}
+@media (max-width: 1017px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 250px;
+    }
+}
+@media (max-width: 849px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 773px) {
+    .main-container {
+        width: 95%;
+        margin-top: 5%;
+    }
+    .overlay {
+        top: 20%;
+        left: -15%;
+        transform-origin: center;
+    }
+    .card:hover .overlay {
+        transform: scale(1.3);
+    }
+}
+@media (max-width: 693px) {
+    .card-container {
+        /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define columns */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 0px;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 250px;
+    }
+    .card:nth-child(1) {
+        grid-column: 1 / 2; /* First column */
+        grid-row: 1 / 2; /* First row */
+    }
+
+    .card:nth-child(2) {
+        grid-column: 2 / 3; /* Second column */
+        grid-row: 2 / 3; /* Second row */
+    }
+
+    .card:nth-child(3) {
+        grid-column: 1 / 2; /* First column */
+        grid-row: 3 / 4; /* Third row */
+    }
+}
+@media (max-width: 647px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 250px;
+    }
+}
+@media (max-width: 480px) {
+    .card-container img {
+        max-width: 250px;
+    }
+}
+@media (max-width: 440px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 250px;
+    }
+}
+@media (max-width: 379px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Define columns */
+        gap: 0px;
+    }
+    .card-container img {
+        max-width: 250px;
+    }
+    .card:nth-child(2) {
+        grid-column: 1 / 3; /* Second column */
+        grid-row: 2 / 3; /* Second row */
+    }
+}
+
+
+
+
+
+/* CONTACT PAGE */
+body.contact-body {
+    margin-top: 15%;
+    background-image: url("/images/background-contact.png");     /* BACKGROUND IMAGE IS FREE TO USE: https://www.veeforu.com/comic-backgrounds/cyan-and-blue-comic-background/*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.back-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 23vmin;
+    height: 23vmin;
+    max-width: 1000px;
+    max-height: 160px;
+    min-width: 30px;
+    min-height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    pointer-events: none;
+
+    transition: filter 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.back-button .clickable-area {
+    pointer-events: auto;
+}
+.back-button:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.377));
+}
+.contact-info {
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+.contact-info-header {
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+
+/* PROJECTS PAGE*/
+.dropdown-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 23vmin;
+    height: 23vmin;
+    max-width: 160px;
+    max-height: 160px;
+    min-width: 30px;
+    min-height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.rotatable-element {
+    transition: all 0.2s ease-in-out;
+    transform-origin: 23% 40%;
+    transform: rotate(-90deg);
+    
+}
+
+.curved-line {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.back-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.dropdown-menu {
+    position: fixed;
+    top: 15px;
+    left: 0;
+    background-color: #e61a1c;
+    padding: 20px;
+    display: none;
+    z-index: 999;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 23vmin);
+    padding-top: calc(16vmin);
+    max-height: calc(100vh - 23vmin);
+    overflow-y: auto;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 7px;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+}
+
+/* for devices that can hover */
+@media(hover: hover) {
+    .dropdown-menu:hover {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.377));
+    }
+    
+    .dropdown-button:hover .rotatable-element {
+        transform: rotate(0deg);
+    }
+    
+    .dropdown-button:hover .curved-line,
+    .dropdown-button:hover .back-text {
+        opacity: 1;
+    }
+    
+    .dropdown-button:hover + .dropdown-menu,
+    .dropdown-menu:hover {
+        display: block;
+    }
+    .dropdown-menu:not(:hover) {
+        display: none;
+    }
+
+}
+
+/* for devices that cannot hover */
+@media(hover: none) {
+    .dropdown-menu.active {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.377));
+    }
+    
+    .dropdown-button.active .rotatable-element {
+        transform: rotate(0deg);
+    }
+    
+    .dropdown-button.active .curved-line,
+    .dropdown-button.active .back-text {
+        opacity: 1;
+    }
+    
+    .dropdown-button.active + .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .project-card {
+        max-width: 90%;
+    }
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h2 {
+    background-color: #e61a1c;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.project-description {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
